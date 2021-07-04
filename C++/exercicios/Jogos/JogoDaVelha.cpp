@@ -6,11 +6,12 @@
 
 using namespace std;
 
-/*precisando adicionar derrota pelo pc
+/*
 -fazer sistema de jogo online local
 -menu selecionar modo de jogo
 -arrumar a randomização das jogadas do computador
 */
+
 //99 == X
 //55 == O
 
@@ -42,17 +43,18 @@ int main(){
 
     do
     {
-      final = escolhe_posicao();
-      final_b = jogada_computador();
-      mostrar_tabela();
+        final = escolhe_posicao();
+        final_b = jogada_computador();
 
-    } while (final == 0 || final_b == 0);
+        mostrar_tabela();
+
+    } while (final == 0 && final_b == 0);
     cout << "FIM DO JOGO" << endl;
 
-    if(vitoria == 1){
+    if(final == 1){
         cout << "PARABENS, VOCE VENCEU!!!" << endl;
     }
-    if(derrota == 1){
+    if(final_b == 1){
         cout << "QUE PENA, VOCE PERDEU!" << endl;
     }
 
@@ -107,73 +109,82 @@ int escolhe_posicao(){
     //preencher as posicoes
     switch(posicao){
         case 1:
-            if(casa[0][0] == 99){
+            if(casa[0][0] == 99 || casa[0][0] == 55){
                 cout << "Posicao ja preenchida!!!" << endl;
                 system(PAUSE);
+                escolhe_posicao();
             }
             else
                 casa[0][0] = 99;
             break;
         case 2:
-            if(casa[0][1] == 99){
+            if(casa[0][1] == 99 || casa[0][1] == 55){
                 cout << "Posicao ja preenchida!!!" << endl;
                 system(PAUSE);
+                escolhe_posicao();
             }
             else
                 casa[0][1] = 99;
             break;
         case 3:
-            if(casa[0][2] == 99){
+            if(casa[0][2] == 99 || casa[0][2] == 55){
                 cout << "Posicao ja preenchida!!!" << endl;
                 system(PAUSE);
+                escolhe_posicao();
             }
             else
                 casa[0][2] = 99;
             break;
         case 4:
-            if(casa[1][0] == 99){
+            if(casa[1][0] == 99 || casa[1][0] == 55){
                 cout << "Posicao ja preenchida!!!" << endl;
                 system(PAUSE);
+                escolhe_posicao();
             }
             else
                 casa[1][0] = 99;
             break;
         case 5:
-            if(casa[1][1] == 99){
+            if(casa[1][1] == 99 || casa[1][1] == 55){
                 cout << "Posicao ja preenchida!!!" << endl;
                 system(PAUSE);
+                escolhe_posicao();
             }
             else
                 casa[1][1] = 99;
             break;
         case 6:
-            if(casa[1][2] == 99){
+            if(casa[1][2] == 99 || casa[1][2] == 55){
                 cout << "Posicao ja preenchida!!!" << endl;
                 system(PAUSE);
+                escolhe_posicao();
             }
             else
                 casa[1][2] = 99;
             break;
         case 7:
-            if(casa[2][0] == 99){
+            if(casa[2][0] == 99 || casa[2][0] == 55){
                 cout << "Posicao ja preenchida!!!" << endl;
                 system(PAUSE);
+                escolhe_posicao();
             }
             else
                 casa[2][0] = 99;
             break;
         case 8:
-            if(casa[2][1] == 99){
+            if(casa[2][1] == 99 || casa[2][1] == 55){
                 cout << "Posicao ja preenchida!!!" << endl;
                 system(PAUSE);
+                escolhe_posicao();
             }
             else
                 casa[2][1] = 99;
             break;
         case 9:
-            if(casa[2][2] == 99){
+            if(casa[2][2] == 99 || casa[2][2] == 55){
                 cout << "Posicao ja preenchida!!!" << endl;
                 system(PAUSE);
+                escolhe_posicao();
             }
             else
                 casa[2][2] = 99;
@@ -207,12 +218,14 @@ int escolhe_posicao(){
     //Retorno Vitoria
     if(vitoria == 1)
         return 1;
+    else
+        return 0;
 
 }
 
 int jogada_computador(){
     int i, j;
-
+    
     do{
         i = rand() % 3;
         j = rand() % 3;
@@ -242,7 +255,9 @@ int jogada_computador(){
         derrota = 1;
 
         //finalizar jogo
-        if(derrota = 1)
+        if(derrota == 1)
             return 1;
+        else
+            return 0;
         
 }
