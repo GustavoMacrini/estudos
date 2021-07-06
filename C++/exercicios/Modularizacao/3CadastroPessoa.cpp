@@ -70,7 +70,7 @@ void cadastros(){
     system(CLEAR);
         cout << "----- Cadastro de pessoas -----" << endl;
         for(int i=0; i < N; i++){
-            cout << "Pessoa " << i+1 << endl;
+            cout << "Pessoa codigo: " << i+1 << endl;
             cout << "Nome.: ";
             cin >> pss.nome[i];
             cout << "Idade: ";
@@ -87,10 +87,10 @@ void mostra_cadastro(){
     system(CLEAR);
     cout << "----- Lista de Cadastros -----" << endl;
     for(int i=0; i < N; i++){
-        cout << "Pessoa " << pss.codigo[i] << endl;
-        cout << pss.nome[i] << endl;
-        cout << pss.idade[i] << endl;
-        cout << pss.cpf[i] << endl;
+        cout << "Pessoa codigo: " << pss.codigo[i] << endl;
+        cout << "Nome: "<< pss.nome[i] << endl;
+        cout << "Idade: "<< pss.idade[i] << endl;
+        cout << "CPF: "<< pss.cpf[i] << endl;
         cout << "------------------------------" << endl;
     }
 }
