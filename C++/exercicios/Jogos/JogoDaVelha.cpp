@@ -7,10 +7,18 @@
 using namespace std;
 
 /*
+OBSERVAÇÃO
+Atualmente o jogo conta com uma randomização dos movimentos feitos pelo computador,
+não sendo as melhores escolhas durante a partida
+*/
+
+/*
+Objetivos
 -fazer sistema de jogo online local
 -menu selecionar modo de jogo
 -arrumar a randomização das jogadas do computador
 */
+
 
 //99 == X
 //55 == O
