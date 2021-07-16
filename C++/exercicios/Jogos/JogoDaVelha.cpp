@@ -28,7 +28,8 @@ void iniciar_tabela();
 void mostrar_tabela();
 int escolhe_posicao();
 int jogada_computador();
-
+void contra_pc();
+void multiplayer();
 
 //variavel global
 int casa[3][3];
@@ -40,15 +41,39 @@ int rodadas = 0;
 
 
 int main(){
+    int modo_jogo;
+
     system(CLEAR);
     cout << "---------- Jogo da Velha ---------- "<< endl;
     cout << "            Bem - Vindo!" << endl;
-    cout << "\n Voce vai jogar com a figura X... " << endl;
+    cout << "\n Selecione o modo de jogo: \n" << endl;
+    cout << " 1 - Contra a maquina " << endl;
+    cout << " 2 - Multiplayer Local " << endl;
+    cout << " 3 - Sair " << endl;
     cout << "------------------------------------" << endl;
-    system(PAUSE);
+    cin >> modo_jogo;
 
+    switch(modo_jogo){
+        case 1: contra_pc();
+                break;
+        case 2: multiplayer();
+                break;
+        case 3: cout << "Saindo do jogo..." << endl;
+                system(PAUSE);
+                break;
+        default:
+                cout << "OPCAO INVALIDA!!" << endl;
+                system(PAUSE);
+                main();
+                break;
+
+    }
+
+    return 0;
+}
+
+void contra_pc(){
     iniciar_tabela();
-
     do
     {
         final = escolhe_posicao();
@@ -65,10 +90,12 @@ int main(){
     if(final_b == 1){
         cout << "QUE PENA, VOCE PERDEU!" << endl;
     }
+}
 
-    
+void multiplayer(){
+    cout << "JOGO MULTIPLAYER";
+    system(PAUSE);
 
-    return 0;
 }
 
 void iniciar_tabela(){
