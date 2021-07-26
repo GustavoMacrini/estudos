@@ -87,7 +87,7 @@ int main(){
             char confirmar;
             cout << "Deseja sair? [S]im [N]ao: ";
             cin >> confirmar;
-            if(confirmar == 'S' || confirmar == 's')
+            if(tolower(confirmar) == 's')
                 cout << "Saindo..." << endl;
             else
                 main();
@@ -234,6 +234,7 @@ void estoqueControlSub(){
                 cout << "Quantidade para remocao Invalida!!!" << endl;
                 cout << "Quantidade em estoque: " << pd.qntd[i] << endl;
                 cout << "-----------------------------" << endl;
+                break;
             }
         }
     }
