@@ -2,7 +2,7 @@
 #include <string>
 #include <algorithm>
 
-//uppercase nos produtos
+//uppercase nos produtos*********************
 
 using namespace std;
 
@@ -100,15 +100,16 @@ void addProduto(){
     do{
         if(pd.nome[i]=="none"){
             cout << "Produto: ";
-            cin >> teste[50];
+            cin >> pd.nome[i];
      
-            for (std::string & s : teste) { 
+            /*for (std::string & s : teste) { 
                 std::for_each(s.begin(), s.end(), [](char & c) { c = std::tolower(static_cast<unsigned char>(c)); 
                 }); 
                 };
             
             pd.nome[i] = teste[50];
-
+            */
+           
             cout << "Quantidade: ";
             cin >> pd.qntd[i];
             cout << "Valor: R$ ";
@@ -260,9 +261,3 @@ void removeProduto(){
     main();
 
 }
-
-
-
-
-
-
