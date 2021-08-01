@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
-#include <algorithm>
 
+//coisas a fazer:
 //uppercase nos produtos*********************
 
 using namespace std;
@@ -28,8 +28,6 @@ typedef struct{
     int qntd[N]={0};
     float valor[N]={0};
 } Produto;
-
-
 
 Produto pd;
 
@@ -101,15 +99,6 @@ void addProduto(){
         if(pd.nome[i]=="none"){
             cout << "Produto: ";
             cin >> pd.nome[i];
-     
-            /*for (std::string & s : teste) { 
-                std::for_each(s.begin(), s.end(), [](char & c) { c = std::tolower(static_cast<unsigned char>(c)); 
-                }); 
-                };
-            
-            pd.nome[i] = teste[50];
-            */
-           
             cout << "Quantidade: ";
             cin >> pd.qntd[i];
             cout << "Valor: R$ ";
@@ -251,11 +240,12 @@ void removeProduto(){
         }
     }
     else{
-        if(confirmar == 'N' || confirmar == 'n')
-        cout << "-----------------------" << endl;
-        cout << "Remocao cancelada!!!" << endl;
-        cout << "-----------------------" << endl;
-        system(PAUSE);
+        if(confirmar == 'N' || confirmar == 'n'){
+            cout << "-----------------------" << endl;
+            cout << "Remocao cancelada!!!" << endl;
+            cout << "-----------------------" << endl;
+            system(PAUSE);
+        }
     }
     
     main();
