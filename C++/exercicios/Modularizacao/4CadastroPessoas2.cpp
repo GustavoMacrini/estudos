@@ -21,7 +21,7 @@ typedef struct{
 Pessoa pss;
 
 //funcoes
-void menu();
+int menu();
 void cadastrar();
 void remover();
 void lista();
@@ -29,16 +29,6 @@ void lista();
 int main(){
     system(CLEAR);
     int escolha;
-
-    cout << "----------MENU----------" << endl;
-    cout << "1 - Cadastrar pessoa  " << endl;
-    cout << "2 - Remover cadastro " << endl;
-    cout << "3 - Mostrar cadastros " << endl;
-    cout << "4 - Sair " << endl;
-    cout << "------------------------" << endl;
-    cout << "Escolha: ";
-    cin >> escolha;
-
     static int nomePessoa = 0;
 
     //nome inicial das pessoas
@@ -48,6 +38,8 @@ int main(){
         nomePessoa++;
     }
 
+    //chamar o menu
+    escolha = menu();
 
     switch(escolha){
         case 1:
@@ -72,6 +64,21 @@ int main(){
     return 0;
 }
 
+
+int menu(){
+    int escolha;
+
+    cout << "----------MENU----------" << endl;
+    cout << "1 - Cadastrar pessoa  " << endl;
+    cout << "2 - Remover cadastro " << endl;
+    cout << "3 - Mostrar cadastros " << endl;
+    cout << "4 - Sair " << endl;
+    cout << "------------------------" << endl;
+    cout << "Escolha: ";
+    cin >> escolha;
+
+    return escolha;
+}
 
 void cadastrar(){
     system(CLEAR);
@@ -101,7 +108,6 @@ void cadastrar(){
     cout << "Voltando ao menu..." << endl;
     system(PAUSE);
     main();
-
 }
 
 void remover(){
