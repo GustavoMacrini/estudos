@@ -92,12 +92,6 @@ void contra_pc(){
     }
 }
 
-void multiplayer(){
-    cout << "JOGO MULTIPLAYER";
-    system(PAUSE);
-
-}
-
 void iniciar_tabela(){
     int contador=1;
 
@@ -111,6 +105,11 @@ void iniciar_tabela(){
         cout << endl;
     }
 
+}
+
+void multiplayer(){
+    cout << "MULTIPLAYER" << endl;
+    system(PAUSE);
 }
 
 void mostrar_tabela(){
