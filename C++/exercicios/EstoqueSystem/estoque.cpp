@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <windows.h>
 
 //coisas a fazer:
 //uppercase nos produtos*********************
@@ -13,7 +14,7 @@ using namespace std;
 #define N 10
 
 //funcoes
-void menu();
+int menu();
 void addProduto();
 void estoqueShow();
 void estoqueControl();
@@ -24,36 +25,32 @@ void sair();
 
 //estrutura de dados
 typedef struct{
-    string nome[N];
-    int qntd[N]={0};
-    float valor[N]={0};
-} Produto;
+    string nome;
+    int qntd=0;
+    float valor=0;
+} Produto[N];
 
 Produto pd;
 
 int main(){
-    int escolha;
+    //Habilitar acentuação
+    int Portugues = 65001;
+    int LinguaPadrao = GetConsoleOutputCP();
+    SetConsoleOutputCP(Portugues);
 
     //variavel para nomeação dos produtos inicialmente
     static int setPdNome = 0;
 
-    system(CLEAR);
-    cout << "-----------------MENU-----------------" << endl;
-    cout << " 1 - Adicionar produto " << endl;
-    cout << " 2 - Controle de estoque " << endl;
-    cout << " 3 - Checar estoque " << endl;
-    cout << " 4 - Remover produto" << endl;
-    cout << " 5 - SAIR" << endl;
-    cout << "--------------------------------------" << endl;
-    cin >> escolha;
-
     //colocar o nome inicial em todos os produtos, rodando apenas 1 vez
     if(setPdNome == 0){
         for(int i = 0; i <= N; i++){
-            pd.nome[i] = "none";
+            pd[i].nome = "none";
             setPdNome++;
         }
     }
+    
+    int escolha;
+    escolha = menu();
 
     switch(escolha){
         case 1:
@@ -70,39 +67,58 @@ int main(){
                 break;
         case 5:
                 char confirmar;
-                cout << "Deseja sair? [S]im [N]ao: ";
+                cout << "Deseja sair? [S]im [N]ão: ";
                 cin >> confirmar;
                 if(confirmar == 'S' || confirmar == 's')
-                    cout << "Saindo..." << endl;
+                    cout << "\nSaindo..." << endl;
                 else
                     main();
                 system(PAUSE);
                 break;
         default:
-                cout << "Opcao invalida!!!" << endl;
+                cout << "Opção inválida!!!" << endl;
                 system(PAUSE);
                 main();
 
     }
 
+    //voltar linguagem padrão do sistema
+    SetConsoleOutputCP(LinguaPadrao);
 
     return 0;
 }
+
+int menu(){
+    int opcao;
+    system(CLEAR);
+    cout << "-----------------MENU-----------------" << endl;
+    cout << " 1 - Adicionar produto " << endl;
+    cout << " 2 - Controle de estoque " << endl;
+    cout << " 3 - Checar estoque " << endl;
+    cout << " 4 - Remover produto" << endl;
+    cout << " 5 - SAIR" << endl;
+    cout << "--------------------------------------" << endl;
+    cout << "Opção: ";
+    cin >> opcao;
+
+    return opcao;
+}
+
 
 void addProduto(){
     system(CLEAR);
     int i = 0;
     int continuar = 0;
-    string teste[50];
 
     do{
-        if(pd.nome[i]=="none"){
-            cout << "Produto: ";
-            cin >> pd.nome[i];
+        if(pd[i].nome=="none"){
+            cout << "------------------------" << endl;
+            cout << "Produto...: ";
+            cin >> pd[i].nome;
             cout << "Quantidade: ";
-            cin >> pd.qntd[i];
-            cout << "Valor: R$ ";
-            cin >> pd.valor[i];
+            cin >> pd[i].qntd;
+            cout << "Valor.....: R$ ";
+            cin >> pd[i].valor;
             continuar++;
         }
         else{
@@ -111,7 +127,9 @@ void addProduto(){
         }
     }while(continuar == 0);
 
-    cout << "Voltando para o menu..." << endl;
+    cout << "------------------------" << endl;
+    cout << "\nVoltando para o menu..." << endl;
+    
     system(PAUSE);
     main();
 }
@@ -120,8 +138,8 @@ void addProduto(){
 void estoqueShow(){
     system(CLEAR);
     for(int i = 0; i < N; i++){
-        if(pd.nome[i]!="none")
-            cout << pd.nome[i] << " | " << pd.qntd[i] << " | R$ " << pd.valor[i] << endl;
+        if(pd[i].nome!="none")
+            cout << pd[i].nome << " | " << pd[i].qntd << " | R$ " << pd[i].valor << endl;
     }
 
     system(PAUSE);
@@ -136,7 +154,7 @@ void estoqueControl(){
     cout << "2 - Remover do estoque " << endl;
     cout << "3 - Menu" << endl;
     cout << "-----------------------------" << endl;
-    cout << "Opcao: ";
+    cout << "Opção: ";
     cin >> opcao;
 
     switch(opcao){
@@ -150,7 +168,7 @@ void estoqueControl(){
                 main();
                 break;
         default:
-                cout << "Opcao inválida!!!" << endl;
+                cout << "Opção inválida!!!" << endl;
                 system(PAUSE);
                 estoqueControl();
     }
@@ -169,10 +187,10 @@ void estoqueControlAdd(){
     cout << "-----------------------------" << endl;
 
     for(int i = 0; i <= N; i++ ){
-        if(pd.nome[i] == produto){
-            pd.qntd[i] += quantidade;
-            cout << "Produto: " << pd.nome[i] << endl;
-            cout << "Nova quantidade: " << pd.qntd[i] << endl;
+        if(pd[i].nome == produto){
+            pd[i].qntd += quantidade;
+            cout << "Produto........: " << pd[i].nome << endl;
+            cout << "Nova quantidade: " << pd[i].qntd << endl;
             cout << "-----------------------------" << endl;
         }
     }
@@ -196,16 +214,16 @@ void estoqueControlSub(){
 
     
     for(int i = 0; i <= N; i++ ){
-        if(pd.nome[i] == produto){
-            if(pd.qntd[i] >= quantidade){
-                pd.qntd[i] -= quantidade;
-                cout << "Produto: " << pd.nome[i] << endl;
-                cout << "Nova quantidade: " << pd.qntd[i] << endl;
+        if(pd[i].nome == produto){
+            if(pd[i].qntd >= quantidade){
+                pd[i].qntd -= quantidade;
+                cout << "Produto........: " << pd[i].nome << endl;
+                cout << "Nova quantidade: " << pd[i].qntd << endl;
                 cout << "-----------------------------" << endl;
             }
             else{
-                cout << "Quantidade para remocao Invalida!!!" << endl;
-                cout << "Quantidade em estoque: " << pd.qntd[i] << endl;
+                cout << "Quantidade para remoção Inválida!!!" << endl;
+                cout << "Quantidade em estoque: " << pd[i].qntd << endl;
                 cout << "-----------------------------" << endl;
             }
         }
@@ -225,16 +243,16 @@ void removeProduto(){
     cout << "----Remover Produto----" << endl;
     cout << "Nome: ";
     cin >> produto;
-    cout << "Produto a ser removido: " << produto << endl;
-    cout << "Confirmar? [S]im [N]ao: ";
+    cout << "\nProduto a ser removido: " << produto << endl;
+    cout << "Confirmar? [S]im [N]ão: ";
     cin >> confirmar;
 
     if(confirmar == 'S' || confirmar == 's'){
         for(int i = 0; i <= N; i++){
-            if(pd.nome[i] == produto){
-                pd.nome[i] = "none";
-                pd.qntd[i] = 0;
-                pd.valor[i] = 0;
+            if(pd[i].nome == produto){
+                pd[i].nome = "none";
+                pd[i].qntd = 0;
+                pd[i].valor = 0;
                 system(PAUSE);
             }
         }
@@ -242,7 +260,13 @@ void removeProduto(){
     else{
         if(confirmar == 'N' || confirmar == 'n'){
             cout << "-----------------------" << endl;
-            cout << "Remocao cancelada!!!" << endl;
+            cout << "Remoção cancelada!!!" << endl;
+            cout << "-----------------------" << endl;
+            system(PAUSE);
+        }
+        else{
+            cout << "-----------------------" << endl;
+            cout << "Opção inválida!!!" << endl;
             cout << "-----------------------" << endl;
             system(PAUSE);
         }
