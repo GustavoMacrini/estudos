@@ -1,0 +1,16 @@
+C:\Users\gusta\OneDrive\Área de Trabalho\codigos c#\Aprendendo POO\MaiorIdade\bin\Debug\net5.0\MaiorIdade.exe
+C:\Users\gusta\OneDrive\Área de Trabalho\codigos c#\Aprendendo POO\MaiorIdade\bin\Debug\net5.0\MaiorIdade.deps.json
+C:\Users\gusta\OneDrive\Área de Trabalho\codigos c#\Aprendendo POO\MaiorIdade\bin\Debug\net5.0\MaiorIdade.runtimeconfig.json
+C:\Users\gusta\OneDrive\Área de Trabalho\codigos c#\Aprendendo POO\MaiorIdade\bin\Debug\net5.0\MaiorIdade.runtimeconfig.dev.json
+C:\Users\gusta\OneDrive\Área de Trabalho\codigos c#\Aprendendo POO\MaiorIdade\bin\Debug\net5.0\MaiorIdade.dll
+C:\Users\gusta\OneDrive\Área de Trabalho\codigos c#\Aprendendo POO\MaiorIdade\bin\Debug\net5.0\ref\MaiorIdade.dll
+C:\Users\gusta\OneDrive\Área de Trabalho\codigos c#\Aprendendo POO\MaiorIdade\bin\Debug\net5.0\MaiorIdade.pdb
+C:\Users\gusta\OneDrive\Área de Trabalho\codigos c#\Aprendendo POO\MaiorIdade\obj\Debug\net5.0\MaiorIdade.csproj.AssemblyReference.cache
+C:\Users\gusta\OneDrive\Área de Trabalho\codigos c#\Aprendendo POO\MaiorIdade\obj\Debug\net5.0\MaiorIdade.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gusta\OneDrive\Área de Trabalho\codigos c#\Aprendendo POO\MaiorIdade\obj\Debug\net5.0\MaiorIdade.AssemblyInfoInputs.cache
+C:\Users\gusta\OneDrive\Área de Trabalho\codigos c#\Aprendendo POO\MaiorIdade\obj\Debug\net5.0\MaiorIdade.AssemblyInfo.cs
+C:\Users\gusta\OneDrive\Área de Trabalho\codigos c#\Aprendendo POO\MaiorIdade\obj\Debug\net5.0\MaiorIdade.csproj.CoreCompileInputs.cache
+C:\Users\gusta\OneDrive\Área de Trabalho\codigos c#\Aprendendo POO\MaiorIdade\obj\Debug\net5.0\MaiorIdade.dll
+C:\Users\gusta\OneDrive\Área de Trabalho\codigos c#\Aprendendo POO\MaiorIdade\obj\Debug\net5.0\ref\MaiorIdade.dll
+C:\Users\gusta\OneDrive\Área de Trabalho\codigos c#\Aprendendo POO\MaiorIdade\obj\Debug\net5.0\MaiorIdade.pdb
+C:\Users\gusta\OneDrive\Área de Trabalho\codigos c#\Aprendendo POO\MaiorIdade\obj\Debug\net5.0\MaiorIdade.genruntimeconfig.cache
