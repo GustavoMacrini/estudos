@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32002.185
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExFixacaoConjuntos", "ExFixacaoConjuntos\ExFixacaoConjuntos.csproj", "{FBE6C9C4-7ACC-4F70-8ECA-F6A8FA68A653}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FBE6C9C4-7ACC-4F70-8ECA-F6A8FA68A653}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBE6C9C4-7ACC-4F70-8ECA-F6A8FA68A653}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBE6C9C4-7ACC-4F70-8ECA-F6A8FA68A653}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBE6C9C4-7ACC-4F70-8ECA-F6A8FA68A653}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0A45B73C-C571-4EF6-BEDC-03F182A9A64E}
+	EndGlobalSection
+EndGlobal
